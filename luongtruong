@@ -1,0 +1,173 @@
+canLoop = true
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+    Title = "đụ mẹ fram defen thg loz tạo ra cái này là lương trường",
+    Style = 3,
+    SizeX = 500,
+    SizeY = 350,
+    Theme = "Dark",
+    ColorOverrides = {
+        MainFrame = Color3.fromRGB(235,235,235)
+    }
+})
+
+local Y = X.New({
+    Title = "Main"
+})
+
+
+local A = Y.Button({
+    Text = "dừng cái đĩ loz auto defen này lại",
+    Callback = function()
+        canLoop = false
+
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "This basically stops the script from farming defense"
+            })
+        end
+        }
+    })
+
+local O = Y.Button({
+    Text = "fram cái đĩ loz auto defen này lại (Chỉ sử dụng nếu bạn đã ngừng Farming hoặc nếu nó bị hỏng)",
+    Callback = function()
+        canLoop = true
+        while wait() and canLoop do
+    if game.Players.LocalPlayer.CharacterAdded then
+    local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(0.5,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-603, 0, -4338, 0, -6, -0, 6, 1, 2);
+end
+end
+
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Starts Farming defense again"
+            })
+        end
+    }
+})
+local A = Y.Button({
+    Text = "Name Hider",
+    Callback = function()
+        local Player = game.Players.LocalPlayer
+
+task.spawn(function()
+    while task.wait() do
+        pcall(function()
+            if Player.Character.HumanoidRootPart:FindFirstChild("OverheadUI") then
+                Player.Character.HumanoidRootPart.OverheadUI:Destroy()
+            end
+        end)
+    end
+end)
+
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Hides your name so you can't get reported"
+            })
+        end
+        }
+    })
+local A = Y.Button({
+    Text = "Made By Lương Trường",
+    Callback = function()
+        setclipboard("https://discord.gg/99999")
+    end,
+        })
+    local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(5,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-474, -0, -4117, 0, -6, -0, -6, 1, 2);
+wait(5)
+
+
+local clickdetector = workspace.Map.Islands.Marineford.Model.Spawner.Crystal.ClickDetector 
+fireclickdetector(clickdetector)
+
+game.Players.LocalPlayer.Character:Destroy()
+
+    local pler = game:service"Players".LocalPlayer;
+local tween_d = game:service"TweenService";
+local inf0 = TweenInfo.new(0.5,Enum.EasingStyle.Quad);
+function tp2(...)
+   local ti_c_k = tick();
+   local dodo = {...};
+   local gaga = CFrame.new(dodo[1],dodo[2],dodo[3]);
+   local tween,gogo = pcall(function()
+       local tween = tween_d:Create(pler.Character["HumanoidRootPart"],inf0,{CFrame=gaga});
+       tween:Play();
+   end)
+   if not tween then return gogo end
+end
+tp2(-603, 0, -4338, 0, -6, -0, 6, 1, 2);
+wait(1.5)
+
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+
+
+while wait() and canLoop do
+    if game.Players.LocalPlayer.CharacterAdded then
+    local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(0.5,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-603, 0, -4338, 0, -6, -0, 6, 1, 2);
+local args = {
+    [1] = "Fighting Style",
+    [2] = "E",
+    [3] = CFrame.new(-577.0409545898438, -3.3241958618164062, -4107.40234375) * CFrame.Angles(-1.302381157875061, 1.2543939352035522, 1.2890747785568237),
+    [4] = workspace.Map.Islands.Marineford.Model.Marineford:FindFirstChild("Marineford platform"):FindFirstChild("Marineford platform").MeshPart,
+    [5] = 5
+}
+
+game:GetService("ReplicatedStorage").Remotes.requestAbility:FireServer(unpack(args))
+
+end
+end
